@@ -1,25 +1,14 @@
 public class Main {
-    public static void main(String[] args) {
-        // 🧺 Almacén de ropa
-        Almacen<String> almacenRopa = new Almacen<>();
-        System.out.println("¿Almacén de ropa vacío? " + almacenRopa.estaVacio());
-        almacenRopa.guardarProducto("Camisa");
-        almacenRopa.mostrarTipoProducto();
+    public static void main(String []args){
+        caja<String> cajaDeTexto = new caja <>();
+        cajaDeTexto.guardar("Hola");
+        System.out.println(cajaDeTexto.obtener()); // imprimirá hola
 
-        // 🔢 Almacén de números
-        Almacen<Integer> almacenNumeros = new Almacen<>();
-        almacenNumeros.guardarProducto(42);
-        almacenNumeros.mostrarTipoProducto();
+        String[] nombres={"Gaby","Erick"};
+        Integer[] numeros={15,22,24};
 
-        // 🍏 Almacén de alimentos
-        Almacen<String> almacenAlimentos = new Almacen<>();
-        almacenAlimentos.guardarProducto("Manzana");
-        almacenAlimentos.mostrarTipoProducto();
-
-        // 🎯 Mostrar productos recuperados
-        System.out.println("\n🎯 Productos recuperados:");
-        System.out.println("🧺 Ropa: " + almacenRopa.obtenerProducto());
-        System.out.println("🔢 Número: " + almacenNumeros.obtenerProducto());
-        System.out.println("🍏 Alimento: " + almacenAlimentos.obtenerProducto());
+        caja.imprimirArray(nombres);
+        caja.imprimirArray(numeros);
     }
+
 }
