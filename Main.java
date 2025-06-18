@@ -1,14 +1,13 @@
 public class Main {
-    public static void main(String []args){
-        caja<String> cajaDeTexto = new caja <>();
-        cajaDeTexto.guardar("Hola");
-        System.out.println(cajaDeTexto.obtener()); // imprimirá hola
+    public static void main(String[] args) {
+        Thread hilo1 = new Thread(new Tarea("Tarea 1"));
+        Thread hilo2 = new Thread(new Tarea("Tarea 2"));
 
-        String[] nombres={"Gaby","Erick"};
-        Integer[] numeros={15,22,24};
+        hilo1.start(); // Inicia la ejecución del hilo 1 llamando internamente a run en Tarea
+        hilo2.start(); // Inicia la ejecución del hilo 2
 
-        caja.imprimirArray(nombres);
-        caja.imprimirArray(numeros);
+        System.out.println("Hilos iniciados desde el hilo principal: " +
+                           Thread.currentThread().getName());
     }
-
 }
+
