@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+mainClassName = 'Main'
+
+dependencies {
+    implementation 'io.projectreactor:reactor-core:3.6.6'
+}
